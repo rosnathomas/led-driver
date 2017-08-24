@@ -1,0 +1,26 @@
+#include "mbed.h"
+#include "math.h"
+
+DigitalOut myled1(p21);
+DigitalOut myled2(p22);
+DigitalOut myled3(p23);
+DigitalOut myled4(p24);
+/*DigitalOut myled5(p25);
+DigitalOut myled6(p26);
+DigitalOut myled7(p27);*/
+
+
+
+Serial pc(USBTX, USBRX);
+int f = 0;
+int main() {
+    pc.baud(9600);
+    f = pc.getc();
+   
+    
+    if (f=='c')
+    {
+        myled1=1;
+        
+    }
+    }

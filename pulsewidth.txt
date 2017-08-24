@@ -1,0 +1,57 @@
+#include "mbed.h"
+
+
+DigitalOut cyan(p5);
+DigitalOut blue(p30);
+DigitalOut green(p29);
+
+float pw=1;
+float num;
+float freq=4;
+float tim = 20;
+int i=1;
+
+void led1(float freq1, float tim1)
+{
+    pw = 1.0/(2.0*freq1);
+    num = tim1/(2.0*pw);
+    for (i =1;i<=num;i++)
+    {
+        blue = 1;
+        wait(pw);
+        blue = 0;
+        wait(pw);
+    }
+}
+void led2(float freq1, float tim1)
+{
+    pw = 1.0/(2.0*freq1);
+    num = tim1/(2.0*pw);
+    for (i =1;i<=num;i++)
+    {
+        green = 1;
+        wait(pw);
+        green = 0;
+        wait(pw);
+    }
+}
+void led3(float freq1, float tim1)
+{
+    pw = 1.0/(2.0*freq1);
+    num = tim1/(2.0*pw);
+    for (i =1;i<=num;i++)
+    {
+        cyan = 1;
+        wait(pw);
+        cyan = 0;
+        wait(pw);
+    }
+}
+
+int main() {
+  
+    led1(4,20);
+    led2(1,10);
+    led3(2,15);
+ 
+    }
